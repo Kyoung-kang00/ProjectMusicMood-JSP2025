@@ -1,0 +1,239 @@
+/* search.css */
+/* 검색 컨테이너 */
+.search-container {
+  position: relative;
+}
+
+/* 검색 입력창 래퍼 */
+.search-wrapper {
+  position: relative;
+  left: 0;
+  right: auto;
+  top: 0;
+  width: 0;
+  overflow: visible;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+}
+
+.search-wrapper.active {
+  width: 300px;
+  opacity: 1;
+  height: auto;
+}
+
+/* 검색 입력창 */
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.search-form.active .search-input {
+  width: 200px;
+  padding-right: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-input {
+  width: 0;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.search-form.active .search-input {
+  padding: 0 35px 0 15px;
+}
+
+/* 검색 결과 항목 스타일 (searchResultsFixed에서 사용) */
+.search-category {
+  color: #6c7ae0;
+  font-weight: 500;
+  padding: 12px 16px 8px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.result-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.artist .result-image {
+  border-radius: 50%;
+}
+
+.result-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.result-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-detail {
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-loading, .no-results {
+  padding: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 검색 닫기 버튼 */
+.search-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.search-close-btn:hover {
+  opacity: 1;
+}
+
+/* 다크 모드 대응 */
+body.theme-dark .search-category {
+  background-color: #333;
+  border-color: #444;
+  color: #eee;
+}
+
+body.theme-dark .search-result-item {
+  border-color: #444;
+}
+
+body.theme-dark .search-result-item:hover {
+  background-color: #2a2a2a;
+}
+
+body.theme-dark .result-name {
+  color: #eee;
+}
+
+body.theme-dark .result-detail {
+  color: #aaa;
+}
+
+body.theme-dark .no-results {
+  color: #aaa;
+}
+
+#searchResultsFixed {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 280px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.icon-btn, .search-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.icon-btn:hover, .search-btn:hover {
+  opacity: 1;
+  color: #42A5F5;
+}
+
+.search-btn {
+  right: 5px;
+  top: 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn i {
+  font-size: 16px;
+}
+
+.search-bar-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-form.active .search-input {
+    width: 150px;
+  }
+  
+  #searchResultsFixed {
+    width: 250px;
+  }
+}

@@ -1,0 +1,231 @@
+/* 배경 슬라이더 스타일 */
+.background-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.background-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.background-slider .slide.active {
+    opacity: 1;
+}
+
+/* 어두운 오버레이 효과 */
+.background-slider::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.8)
+    );
+    z-index: -1;
+}
+
+/* 로그인 컨테이너 원래 스타일 유지 */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.1) 0%, rgba(18, 18, 18, 0.9) 100%);
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 버튼 스타일만 변경 */
+.login-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #42A5F5, #00CFFF);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 207, 255, 0.3);
+}
+
+.login-button:hover {
+    background: linear-gradient(45deg, #00CFFF, #42A5F5);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 207, 255, 0.5);
+}
+
+/* 나머지 스타일은 이전과 동일하게 유지 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #42A5F5;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.forgot-password {
+    color: #42A5F5;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* 소셜 로그인 섹션 */
+.social-login {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.social-login p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* 소셜 버튼 컨테이너 */
+.social-buttons {
+    display: flex;
+    flex-direction: column;  /* 세로 배치로 변경 */
+    gap: 0.8rem;            /* 버튼 간격 조정 */
+    width: 100%;
+}
+
+/* 소셜 버튼 공통 스타일 */
+.social-btn {
+    width: 100%;           /* 전체 너비 사용 */
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    min-height: 48px;      /* 버튼 최소 높이 설정 */
+}
+
+/* 소셜 아이콘 */
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;    /* 아이콘과 텍스트 사이 간격 */
+    flex-shrink: 0;
+}
+
+/* 구글 버튼 */
+.social-btn.google {
+    background: #ffffff;
+    color: #757575;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.social-btn.google:hover {
+    background: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 카카오 버튼 */
+.social-btn.kakao {
+    background: #FEE500;
+    color: #000000;
+    justify-content: center;
+    position: relative;
+}
+
+.social-btn.kakao:hover {
+    background: #FDD835;
+    box-shadow: 0 4px 8px rgba(254, 229, 0, 0.2);
+}
+
+.social-btn.kakao .social-icon {
+    width: 18px;  /* 카카오 로고 크기 조정 */
+    height: 18px;
+}
+
+.signup-link {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.signup-link a {
+    color: #42A5F5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 2rem;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .social-btn {
+        width: 100%;
+    }
+}

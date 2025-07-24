@@ -1,0 +1,662 @@
+/* MusicMood 스타일 서비스 소개 CSS */
+
+/* 공통 스타일 */
+:root {
+  --vibe-primary: #1d32e0;
+  --vibe-gradient: linear-gradient(45deg, #4168e1, #9e42f5);
+  --vibe-text: #ffffff;
+  --vibe-bg-dark: #121212;
+  --vibe-bg-card: #1e1e1e;
+  --vibe-accent: #5b3bf5;
+}
+
+.gradient-text {
+  background: var(--vibe-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* 서비스 인트로 섹션 */
+.service-intro-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--vibe-bg-dark);
+}
+
+.service-intro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(93, 60, 245, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-text-container {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-heading {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.audio-features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: var(--vibe-bg-card);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--index, 0) * 0.1s);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--vibe-text);
+  font-weight: 600;
+}
+
+.feature-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+/* 플레이리스트 섹션 */
+.playlist-section {
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--vibe-bg-dark);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.playlist-category {
+  margin-bottom: 4rem;
+}
+
+.category-title {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--vibe-gradient);
+  border-radius: 3px;
+}
+
+.playlist-slider-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.slider-control:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.slider-control.prev {
+  left: 10px;
+}
+
+.slider-control.next {
+  right: 10px;
+}
+
+.playlist-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  scrollbar-width: none;
+}
+
+.playlist-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.playlist-card {
+  flex: 0 0 250px;
+  position: relative;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--index, 0) * 0.1s);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.playlist-card:hover {
+  transform: translateY(-10px);
+}
+
+.playlist-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.playlist-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.playlist-card:hover .playlist-thumbnail img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.playlist-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: var(--vibe-accent);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  background: var(--vibe-primary);
+}
+
+.playlist-info {
+  padding: 1rem 0.5rem;
+}
+
+.playlist-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--vibe-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-creator {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* 무한대 이퀄라이저 섹션 */
+.infinity-equalizer-section {
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--vibe-bg-dark);
+}
+
+.infinity-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  height: 300px;
+}
+
+.infinity-visualizer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.infinity-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: visible;
+}
+
+.infinity-shape::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: 3px solid transparent;
+  border-image: var(--vibe-gradient);
+  border-image-slice: 1;
+  border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+}
+
+.infinity-shape::after {
+  content: '∞';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 240px;
+  color: transparent;
+  background: linear-gradient(135deg, #4168e1, #9e42f5, #4168e1, #9e42f5);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientFlow 8s ease infinite;
+  opacity: 0.2;
+}
+
+.equalizer-bars {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  gap: 5px;
+}
+
+.equalizer-bars.left {
+  bottom: 25%;
+  left: 20%;
+  transform: rotate(-30deg);
+}
+
+.equalizer-bars.right {
+  bottom: 25%;
+  right: 20%;
+  transform: rotate(30deg);
+}
+
+.eq-bar {
+  width: 6px;
+  height: 20px;
+  background: linear-gradient(to top, #4168e1, #9e42f5);
+  border-radius: 3px;
+  animation: equalizerBars 1.2s ease-in-out infinite;
+}
+
+.equalizer-bars .eq-bar:nth-child(1) { animation-delay: 0.2s; }
+.equalizer-bars .eq-bar:nth-child(2) { animation-delay: 0.5s; }
+.equalizer-bars .eq-bar:nth-child(3) { animation-delay: 0.1s; }
+.equalizer-bars .eq-bar:nth-child(4) { animation-delay: 0.3s; }
+.equalizer-bars .eq-bar:nth-child(5) { animation-delay: 0.7s; }
+.equalizer-bars .eq-bar:nth-child(6) { animation-delay: 0.1s; }
+.equalizer-bars .eq-bar:nth-child(7) { animation-delay: 0.4s; }
+.equalizer-bars .eq-bar:nth-child(8) { animation-delay: 0.2s; }
+
+.infinity-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.scrolling-down .infinity-text,
+.scrolling-up .infinity-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.infinity-text .left-text {
+  position: absolute;
+  width: 40%;
+  left: 5%;
+  text-align: left;
+}
+
+.infinity-text .right-text {
+  position: absolute;
+  width: 40%;
+  right: 5%;
+  text-align: right;
+}
+
+@keyframes equalizerBars {
+  0%, 100% {
+    height: 20px;
+  }
+  50% {
+    height: 70px;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 차트 링크 */
+.chart-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chart-link {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--vibe-bg-card);
+  border-radius: 8px;
+  color: var(--vibe-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.chart-link:hover {
+  background-color: var(--vibe-accent);
+  transform: translateY(-3px);
+}
+
+/* AI 기능 소개 섹션 */
+.ai-feature-section {
+  padding: 6rem 2rem;
+  background-color: var(--vibe-bg-dark);
+  position: relative;
+}
+
+.feature-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.feature-tab {
+  flex: 1 1 300px;
+  background-color: var(--vibe-bg-card);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--vibe-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-tab:hover::before,
+.feature-tab.active::before {
+  opacity: 1;
+}
+
+.feature-tab:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-tab.active {
+  background-color: rgba(93, 60, 245, 0.1);
+}
+
+.tab-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--vibe-text);
+  font-weight: 600;
+}
+
+.tab-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+  .intro-heading {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .feature-card {
+    flex: 1 1 200px;
+  }
+  
+  .infinity-text {
+    font-size: 1.4rem;
+  }
+  
+  .infinity-shape::after {
+    font-size: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-heading {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .playlist-slider-container {
+    padding: 0 40px;
+  }
+  
+  .slider-control {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .playlist-card {
+    flex: 0 0 200px;
+  }
+  
+  .infinity-text {
+    font-size: 1.2rem;
+  }
+  
+  .infinity-shape::after {
+    font-size: 140px;
+  }
+  
+  .infinity-text .left-text,
+  .infinity-text .right-text {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-heading {
+    font-size: 1.8rem;
+  }
+  
+  .feature-card {
+    flex: 1 1 100%;
+  }
+  
+  .feature-tab {
+    flex: 1 1 100%;
+  }
+  
+  .playlist-slider-container {
+    padding: 0 30px;
+  }
+  
+  .slider-control {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .playlist-card {
+    flex: 0 0 180px;
+  }
+  
+  .infinity-text {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+  
+  .infinity-shape::after {
+    font-size: 100px;
+  }
+  
+  .infinity-text .left-text {
+    top: 30%;
+    width: 80%;
+    text-align: center;
+    left: 10%;
+  }
+  
+  .infinity-text .right-text {
+    bottom: 30%;
+    width: 80%;
+    text-align: center;
+    right: 10%;
+  }
+} 
