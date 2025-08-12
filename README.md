@@ -80,9 +80,3 @@ Backend Framework: Servlet, JDBC, MyBatis
 
 
 
-
-
-# 데이터베이스
-
-<img width="679" height="832" alt="Image" src="https://github.com/user-attachments/assets/4b533d81-cfb5-47a1-bb82-9ddb80c2ec86" />
-
