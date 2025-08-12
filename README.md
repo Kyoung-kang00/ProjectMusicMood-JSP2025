@@ -50,57 +50,34 @@ Backend Framework: Servlet, JDBC, MyBatis
 
 **메인 페이지**
 
-<img width="1279" height="1127" alt="Image" src="https://github.com/user-attachments/assets/619558a6-bde3-4b46-acb1-befe0952f141" />
+<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/f9c65c1f-8aa3-4261-bc13-882cb014f9db" />
 
 
-**문제 목록**
+**실시간 차트**
 
-<img width="1195" height="1243" alt="Image" src="https://github.com/user-attachments/assets/f3d3d258-3dbc-4775-b9eb-e251940ccb30" />
-
-
-**문제 상세(부정행위)**
-
-<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/e8e22458-a556-4d07-8fe8-9ac16f93775b" />
+<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/bd9d90fb-8f99-442a-b813-382c695e4853" />
 
 
-**문제 상세(정답)**
+**인기 플레이 리스트**
 
-<img width="2846" height="1535" alt="Image" src="https://github.com/user-attachments/assets/7db2e83e-b17c-4439-9ca6-a5792d10b24c" />
-
-
-**문제 풀이 결과**
-
-<img width="1603" height="1403" alt="Image" src="https://github.com/user-attachments/assets/f26b8eb5-7484-4cee-af39-be6d4b40d6f8" />
+<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/b668298a-fb75-46a3-ada8-5c66a80136d6" />
 
 
-**시험 응시**
+**마이 플레이리스트**
 
-<img width="2824" height="1524" alt="Image" src="https://github.com/user-attachments/assets/9104df8a-0ddd-4331-a295-1d87ef5b2918" />
-
-
-**시험 결과**
-
-<img width="1219" height="1549" alt="Image" src="https://github.com/user-attachments/assets/3867a24c-a531-41de-9b5f-570c6f385028" />
+<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/69f01ac4-e871-4d26-ace1-d954591a3280" />
 
 
-**커뮤니티**
+**가수 검색**
 
-<img width="1744" height="1539" alt="Image" src="https://github.com/user-attachments/assets/2e251a5e-e8dc-4e5b-9d2e-8191e9bc5f49" />
-
-
-**글 상세**
-
-<img width="1174" height="1485" alt="Image" src="https://github.com/user-attachments/assets/dec672f6-5ec7-4029-b27a-a9fbffc85a48" />
+<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/2b93a52d-c5d9-49a8-ac25-6b4cb467172b" />
 
 
-**사용자 마이 페이지**
+**곡 검색**
 
-<img width="1596" height="1395" alt="Image" src="https://github.com/user-attachments/assets/48f6beb1-a6a3-44d9-9e87-5cca8736f015" />
+<img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/2ccb255a-bb70-44c6-8dbe-4c113728cb52" />
 
 
-**관리자 페이지**
-
-<img width="2677" height="1546" alt="Image" src="https://github.com/user-attachments/assets/983c8683-5be8-4a9a-8a5c-6f99c0c32e17" />
 
 
 
