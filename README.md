@@ -77,6 +77,9 @@ Backend Framework: Servlet, JDBC, MyBatis
 
 <img width="2841" height="1519" alt="Image" src="https://github.com/user-attachments/assets/2ccb255a-bb70-44c6-8dbe-4c113728cb52" />
 
+**ERD다이어그램**
+<img width="2841" height="1519" alt="image" src="https://github.com/user-attachments/assets/0b0b15f5-4fd9-4f00-8d9d-b1ece6c5e303" />
+
 
 
 
